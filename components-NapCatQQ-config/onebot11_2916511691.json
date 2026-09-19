@@ -1,0 +1,31 @@
+{
+  "network": {
+    "httpServers": [],
+    "httpSseServers": [],
+    "httpClients": [],
+    "websocketServers": [],
+    "websocketClients": [
+      {
+        "name": "ws-client-647",
+        "enable": true,
+        "messagePostFormat": "array",
+        "token": "OJ-WTiFbwWGEreH4t-jQybP5gJ5BqSSs3j22-LBbg-k",
+        "url": "ws://127.0.0.1:6199/ws",
+        "reportSelfMessage": false,
+        "reconnectInterval": 5000,
+        "heartInterval": 30000
+      }
+    ],
+    "plugins": []
+  },
+  "musicSignUrl": "",
+  "enableLocalFile2Url": false,
+  "parseMultMsg": false,
+  "imageDownloadProxy": "",
+  "timeout": {
+    "baseTimeout": 10000,
+    "uploadSpeedKBps": 256,
+    "downloadSpeedKBps": 256,
+    "maxTimeout": 1800000
+  }
+}
