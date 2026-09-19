@@ -1,0 +1,29 @@
+name: astrbot_plugin_keyreply
+display_name: 唛头的QQ群插件
+short_desc: 消息命中关键词时自动回复，支持精确/包含/正则匹配、命中统计与生效群聊范围
+desc: |
+  唛头的QQ群插件 —— 一个轻量的关键词自动回复插件：
+  - 当群聊或私聊消息命中配置的关键词时，自动回复对应内容
+  - 支持 **exact（精确）** / **contains（包含）** / **regex（正则）** 三种匹配模式
+  - ★生效群聊：自动读取 bot 所在全部群聊，WebUI 面板下拉勾选哪些群生效
+    （all 全部 / whitelist 仅名单内 / blacklist 排除名单内），私聊可单独开关
+  - 群聊回复可选择是否 @ 发送者
+  - 每次命中自动记录命中次数与最近命中时间（插件 KV 持久化）
+  - ★运行时动态管理规则（无需进 WebUI），全部以 `reply` 为触发词：
+    `/reply-add` 添加/更新、`/reply-del` 删除、`/reply-list` 列表、`/reply-stats` 统计
+  - 生效群聊指令：`/reply-groups` 列群、`/reply-group-add|del` 增删群、`/reply-scope` 切模式
+  - 规则持久化采用 KV + 本地文件双保险，兼容新旧版本，重启不丢失
+  - 可在 WebUI 管理面板可视化编辑，也支持 QQ 指令直接增删
+  - /reply-list 输出采用多行布局，关键词/回复内容过长时自动换行，显示完整
+version: 1.4.0
+author: 唛头
+repo: 无
+astrbot_version: ">=4.9.2"
+support_platforms:
+  - aiocqhttp
+  - qq_official
+tags:
+  - 关键词
+  - 自动回复
+  - 群管
+  - 唛头
