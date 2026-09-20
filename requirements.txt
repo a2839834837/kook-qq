@@ -1,4 +1,0 @@
-# 本插件仅使用 Python 标准库与 AstrBot 内置 API，无额外依赖。
-# 如需扩展（如接入数据库、HTTP 请求），在此添加，例如：
-# httpx
-# aiohttp
