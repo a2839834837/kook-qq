@@ -1,0 +1,85 @@
+{
+  "bridge_url": {
+    "description": "KOOK 机器人桥接地址",
+    "type": "string",
+    "default": "http://127.0.0.1:8787",
+    "hint": "同机部署保持默认；跨机器填 http://对方IP:8787，并把 KOOK 机器人 .env 的 BRIDGE_HOST 改成 0.0.0.0"
+  },
+  "bridge_token": {
+    "description": "桥接鉴权 Token",
+    "type": "string",
+    "default": "",
+    "hint": "必须与 KOOK 机器人 .env 里的 BRIDGE_TOKEN 完全一致；跨机器部署务必设置"
+  },
+  "kook_guild_id": {
+    "description": "KOOK 服务器 ID",
+    "type": "string",
+    "default": "",
+    "hint": "留空则自动取机器人的第一个服务器；可发「kook服务器」查看所有服务器与频道 ID"
+  },
+  "kook_channel_id": {
+    "description": "指令落地频道 ID",
+    "type": "string",
+    "default": "",
+    "hint": "必须是 KOOK 机器人 TARGET_CHANNEL_NAME 里配过的频道（如测试频道），否则指令会被忽略。留空自动查找"
+  },
+  "default_kook_user": {
+    "description": "默认执行身份（未绑定者兜底）",
+    "type": "string",
+    "default": "",
+    "hint": "留空则每个 QQ 必须完成「绑定 用户名#ID」验证后才能用；KOOK 端 FALLBACK_KOOK_USER_ID 优先级更高"
+  },
+  "async_mode": {
+    "description": "异步回传结果",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后先回「已转发」，执行完再推送结果，避免「卖货/复制分组」等慢指令把 QQ 卡住"
+  },
+  "echo_to_kook": {
+    "description": "结果同时发到 KOOK 频道",
+    "type": "bool",
+    "default": true,
+    "hint": "开启后 KOOK 频道里的成员也能看到这条由 QQ 发起的操作记录"
+  },
+  "timeout_sec": {
+    "description": "请求超时（秒）",
+    "type": "int",
+    "default": 120,
+    "hint": "卖货、复制分组等指令较慢，建议不低于 60"
+  },
+  "admin_only": {
+    "description": "仅 AstrBot 管理员可用",
+    "type": "bool",
+    "default": false
+  },
+  "private_only": {
+    "description": "仅私聊生效（忽略群消息）",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后：群里发的指令一律不处理（静默忽略，不回复任何内容），只有私聊给机器人的消息才会转发到 KOOK；关闭后群里和私聊都正常生效。改完需重载插件"
+  },
+  "allow_qq": {
+    "description": "额外放行的 QQ 号白名单",
+    "type": "list",
+    "default": [],
+    "hint": "填写 QQ 号，一行一个；为空表示不限制（除 admin_only 外）"
+  },
+  "image_mode": {
+    "description": "以图片形式回复",
+    "type": "bool",
+    "default": true,
+    "hint": "把回复渲染成一张卡片图片发送。需要 Pillow 和中文字体；任一缺失会自动降级为文本卡片，不影响使用"
+  },
+  "image_font_path": {
+    "description": "自定义中文字体文件路径",
+    "type": "string",
+    "default": "",
+    "hint": "留空自动探测（Windows 微软雅黑 / macOS 苹方 / Linux 文泉驿）。想换字体可填绝对路径，如 C:/Windows/Fonts/msyh.ttc"
+  },
+  "image_emoji_font_path": {
+    "description": "自定义彩色 emoji 字体路径",
+    "type": "string",
+    "default": "",
+    "hint": "留空自动探测（Windows seguiemj.ttf / macOS Apple Color Emoji / Linux NotoColorEmoji）。找不到时 emoji 会显示为单色，不会变成方块"
+  }
+}

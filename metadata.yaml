@@ -1,0 +1,6 @@
+name: kook_bridge
+display_name: KOOK 机器人指令桥
+desc: 把 QQ 上的消息转发给本地运行的 KOOK 机器人，在 KOOK 频道里执行指令并把结果回传 QQ
+version: v1.0.0
+author: 唛头
+repo: 无
